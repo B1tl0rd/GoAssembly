@@ -12,6 +12,7 @@ func main() {
 	GoAssembly.Ruta["eventos"] = RutaEventos()
 	GoAssembly.Ruta["variables"] = RutaVariables()
 	GoAssembly.Ruta["extras"] = RutaExtra()
+	GoAssembly.Ruta["login"] = RutaLogin()
 	//Run app
 	GoAssembly.RunApp()
 }
@@ -26,8 +27,19 @@ func RutaIndex() *GoAssembly.Page {
 		<button @rt="variables">Entra a Variables</button>
 		<button @rt="eventos">Entrar a Eventos</button>
 		<button @rt="extras">Extras</button>
+		<button @rt="login">Onfline Login</button>
 		<button @rt="error">Not Found</button>
+		<br/>
+		<p>Hola {{ user }}</p>
 	</center>
 	`
+	//Declara tus variables
+	App.Data = func() {
+		App.Var.SetT("user", "Invitado", false)
+	}
+	//Prepara el index
+	App.Prepare = func() {
+		App.Title("Inicio")
+	}
 	return &App
 }

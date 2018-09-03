@@ -10,6 +10,7 @@ type store struct {
 	variables map[string]string
 }
 
+// Set a la variable tipo 0-> GoAssembly le agrega el valor especificado
 func (this *store) Set(name string, val interface{}) {
 	name += "Val"
 	this.variables[name] = fmt.Sprint(val)
@@ -19,10 +20,13 @@ func (this *store) Set(name string, val interface{}) {
 
 }
 
+// Get odtiene cualquier valor de la variable especificada
 func (this *store) Get(name string) string {
 	name += "Val"
 	return this.variables[name]
 }
+
+// GetInt odtiene cualquier valor de la variable especificada en INT
 func (this *store) GetInt(name string) int {
 	name += "Val"
 	n, err := strconv.Atoi(this.variables[name])
@@ -32,6 +36,7 @@ func (this *store) GetInt(name string) int {
 	return n
 }
 
+// SetT Guarda las variables GoAssembly tipo 1:false y 2:true
 func (this *store) SetT(name string, val interface{}, lvl bool) {
 	name += "Val"
 	switch lvl {
