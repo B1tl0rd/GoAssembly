@@ -10,7 +10,7 @@ type store struct {
 	variables map[string]string
 }
 
-// Set a la variable tipo 0-> GoAssembly le agrega el valor especificado
+// Set a la variable tipo 0-> GoAssembli le agrega el valor especificado
 func (this *store) Set(name string, val interface{}) {
 	name += "Val"
 	this.variables[name] = fmt.Sprint(val)

@@ -1,5 +1,4 @@
 package GoAssembly
-
 import (
 	"strconv"
 	"strings"

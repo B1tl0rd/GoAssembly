@@ -1,0 +1,12 @@
+require Go 1.11 
+
+#Iniciar un servidor
+Firs Run server
+windows
+->$ server_SPA_EXAMPLE_WINDOWS.exe
+Linux
+->$ ./server_SPA_EXAMPLE_LINUX
+
+#Compilar assembly
+->$cd ASSEM/assembly
+->$GOARCH=wasm GOOS=js go build

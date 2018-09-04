@@ -2,7 +2,7 @@
 
 Hi! I'm your first Assembly app in **GoAssembly**.
 
-# GoAssembly
+# GoAssembli
 Go Assembly is one Framework for WebAssembly 
 
 

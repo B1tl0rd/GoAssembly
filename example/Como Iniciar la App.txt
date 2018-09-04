@@ -1,9 +1,0 @@
-Importante Tener Go 1.11 
-
-#Iniciar un servidor
-EL codigo de un server bascio ya esta disponible
-->$Go build server.go
-
-#Compilar assembly
-->$cd ASSEM/assembly
-->$GOARCH=wasm GOOS=js go build
