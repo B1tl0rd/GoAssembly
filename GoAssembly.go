@@ -161,7 +161,7 @@ func onInnerRunning() {
 	getOldValue()
 	reloadEvents()
 	reloadClickEventRoute()
-	if GetElementId(IdSelect).String() != "null" {
+	if GetElementId(IdSelect) != GetElementId("null") {
 		GetElementId(IdSelect).Call("focus")
 	}
 }
@@ -198,7 +198,7 @@ func processROUTE(this *Page) {
 // reloadEvents recarga los eventos
 func reloadEvents() {
 	for _, n := range eventos {
-		if GetElementId(n.MiId).String() != "null" {
+		if GetElementId(n.MiId) != GetElementId("null") {
 			GetElementId(n.MiId).Call("addEventListener", n.evento, js.Global().Get("Event"+n.methodo))
 		} else {
 			println("Error no esta defido")

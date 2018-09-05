@@ -112,7 +112,7 @@ func getIdTotalValue() {
 				if template.compileTemplate[poxA-lenPre+1:poxA] == prefi {
 					//Old data
 					old := template.compileTemplate[poxA+1 : poxB]
-					if GetElementId(old).String() != "null" {
+					if GetElementId(old) != GetElementId("nill") {
 						oldValue[old] = GetElementId(old).Get("value")
 					}
 				}

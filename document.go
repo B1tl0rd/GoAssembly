@@ -18,7 +18,7 @@ type IdValues struct {
 // Id contiene los valores del Id select
 func (documentC) Id(id string) IdValues {
 	el := GetElementId(id)
-	if el.String() == "null" {
+	if el == GetElementId("null") {
 		errorDOM("El ID:" + id + " No esta disponible")
 	}
 	return IdValues{

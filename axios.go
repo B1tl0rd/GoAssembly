@@ -10,6 +10,7 @@ func NewAxios(a *Page) axios {
 	return axios{page: a}
 }
 
+// Get reques Http
 func (t *axios) Get(url string) string {
 
 	return ""
