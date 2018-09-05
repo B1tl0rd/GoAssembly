@@ -90,7 +90,7 @@ func setIdAndEventName(template *Page) {
 
 func getOldValue() {
 	for name, valor := range oldValue {
-		if GetElementId(name).String() != "null" {
+		if GetElementId(name) != GetElementId("null") {
 			GetElementId(name).Set("value", valor)
 		}
 	}

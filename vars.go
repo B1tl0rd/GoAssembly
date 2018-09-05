@@ -41,8 +41,8 @@ func (this *store) SetT(name string, val interface{}, lvl bool) {
 	name += "Val"
 	switch lvl {
 	case false:
-		v := js.Global().Get(name).String()
-		if v == "undefined" {
+		v := js.Global().Get(name)
+		if v == js.Global().Get("undefined") {
 			//fmt.Println("No esta definido")
 			this.variables[name] = fmt.Sprint(val)
 			js.Global().Set(name, fmt.Sprint(val))
@@ -51,7 +51,7 @@ func (this *store) SetT(name string, val interface{}, lvl bool) {
 			//fmt.Println("Si esta definido")
 			if Running == false {
 				//fmt.Println("Se guarda")
-				this.variables[name] = v
+				this.variables[name] = v.String()
 			} else {
 				//fmt.Println("Se renueva")
 				this.variables[name] = fmt.Sprint(val)
@@ -59,8 +59,8 @@ func (this *store) SetT(name string, val interface{}, lvl bool) {
 			}
 		}
 	case true:
-		v := js.Global().Get("localStorage").Call("getItem", name).String()
-		if v == "null" {
+		v := js.Global().Get("localStorage").Call("getItem", name)
+		if v == js.Global().Get("localStorage").Call("getItem", "null") {
 			//fmt.Println("No esta definido")
 			this.variables[name] = fmt.Sprint(val)
 			js.Global().Get("localStorage").Call("setItem", name, fmt.Sprint(val))
@@ -68,7 +68,7 @@ func (this *store) SetT(name string, val interface{}, lvl bool) {
 			//fmt.Println("Si esta definido")
 			if Running == false {
 				//fmt.Println("Se guarda")
-				this.variables[name] = v
+				this.variables[name] = v.String()
 			} else {
 				//fmt.Println("Se renueva")
 				this.variables[name] = fmt.Sprint(val)

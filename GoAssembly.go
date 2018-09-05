@@ -59,15 +59,17 @@ func (m *Page) Title(name string) {
 
 // RunApp Inicia la paginas declaradas "index" por defecto la ruta principal se declara en el index.htm
 func RunApp() {
-	rutaMain := js.Global().Get("ruta").String()
-	if rutaMain != "undefined" {
+	rutaMain := js.Global().Get("ruta")
+	if rutaMain != js.Global().Get("undefined") {
+		rMain := rutaMain.String()
 		for na, _ := range Ruta {
-			if na == rutaMain {
-				ruta = rutaMain
-				prepareApp(Ruta[rutaMain])
+
+			if na == rMain {
+				ruta = rMain
+				prepareApp(Ruta[rMain])
 			}
 		}
-		errorDOM("No se encontro la ruta -> " + rutaMain + " <-")
+		errorDOM("No se encontro la ruta -> " + rMain + " <-")
 
 	} else {
 		errorDOM("Error la variable ruta no se encuentra disponible")

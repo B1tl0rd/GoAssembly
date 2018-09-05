@@ -10,7 +10,7 @@ func NewAxios(a *Page) axios {
 	return axios{page: a}
 }
 
-// Get reques Http
+// Get reques in Axios Js
 func (t *axios) Get(url string) string {
 
 	return ""

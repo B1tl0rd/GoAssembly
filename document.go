@@ -6,7 +6,8 @@ import (
 
 // documentC cualquier valor del dom
 type documentC struct {
-	page  *Page
+	page *Page
+	//Parse
 	Parse parse
 }
 
@@ -21,6 +22,7 @@ func (documentC) Id(id string) IdValues {
 	if el == GetElementId("null") {
 		errorDOM("El ID:" + id + " No esta disponible")
 	}
+	//Get Values from Id
 	return IdValues{
 		Value: el.Get("value"),
 	}
@@ -28,6 +30,7 @@ func (documentC) Id(id string) IdValues {
 
 // Document retorna valores especiales referentes al documento
 func Document(t *Page) documentC {
+	//Get document
 	b := documentC{
 		page: t,
 	}
