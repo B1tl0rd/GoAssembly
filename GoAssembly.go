@@ -1,6 +1,7 @@
 package GoAssembly
 
 import (
+	"os"
 	"strings"
 	"syscall/js"
 )
@@ -177,7 +178,7 @@ func processROUTE(this *Page) {
 		p := t[0].Get("target").Get("id").String()
 		js.Global().Set("ruta", getRuta(p))
 		js.Global().Call("goroute")
-		panic("")
+		os.Exit(0)
 	}
 	js.Global().Set("RunRoute", js.NewCallback(funct))
 	//Events click

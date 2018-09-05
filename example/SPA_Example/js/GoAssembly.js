@@ -5,6 +5,9 @@ Use of this source code is governed by a BSD-style
 license that can be found in the LICENSE file.
 
 */
+function axiosAssemly(dato) {
+	return dato
+}
 
 		if (!WebAssembly.instantiateStreaming) { // polyfill
 			WebAssembly.instantiateStreaming = async (resp, importObject) => {
@@ -25,6 +28,5 @@ license that can be found in the LICENSE file.
 			inst = await WebAssembly.instantiate(mod, go.importObject); // reset instance
 		}
 		function goroute() {
-			setTimeout(()=>{console.clear()},10);
 			setTimeout(()=>{run()},30);
 		}
