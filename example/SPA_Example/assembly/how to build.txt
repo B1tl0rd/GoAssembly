@@ -1,0 +1,4 @@
+require Go 1.11 
+
+->$cd ASSEM/assembly
+->$GOARCH=wasm GOOS=js go build
