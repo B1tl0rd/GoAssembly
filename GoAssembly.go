@@ -131,7 +131,9 @@ func processVARS(this *Page) {
 		var a = len(name)
 		nomA := "{{ " + name[:a-3] + " }}"
 		nomB := "{{" + name + "}}"
-		rem := strings.NewReplacer(nomA, val, nomB, val)
+		nomC := "{{ " + name + "}}"
+		nomD := "{{" + name + " }}"
+		rem := strings.NewReplacer(nomA, val, nomB, val, nomC, val, nomD, val)
 		tmp = rem.Replace(tmp)
 	}
 	this.compileTemplate = tmp
@@ -141,7 +143,7 @@ func processVARS(this *Page) {
 func RunRoute(laruta string) {
 	js.Global().Set("ruta", laruta)
 	js.Global().Call("goroute")
-	panic("")
+	os.Exit(0)
 }
 
 //onInnerRunning si la pagina se renueva recarga los elementos
@@ -176,9 +178,7 @@ func processROUTE(this *Page) {
 
 	funct := func(t []js.Value) {
 		p := t[0].Get("target").Get("id").String()
-		js.Global().Set("ruta", getRuta(p))
-		js.Global().Call("goroute")
-		os.Exit(0)
+		RunRoute(getRuta(p))
 	}
 	js.Global().Set("RunRoute", js.NewCallback(funct))
 	//Events click
@@ -201,7 +201,7 @@ func reloadEvents() {
 		if GetElementId(n.MiId) != GetElementId("null") {
 			GetElementId(n.MiId).Call("addEventListener", n.evento, js.Global().Get("Event"+n.methodo))
 		} else {
-			println("Error no esta defido")
+			//No definido
 		}
 	}
 }

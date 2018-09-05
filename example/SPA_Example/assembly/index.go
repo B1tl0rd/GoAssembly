@@ -29,8 +29,8 @@ func RutaIndex() *GoAssembly.Page {
 		<button @rt="eventos">Entrar a Eventos</button>
 		<button @rt="extras">Extras</button>
 		<button @rt="login">Onfline Login</button>
-		<button @rt="request"> Http Request</button>
 		<button @rt="error">Not Found</button>
+		<button style="color:red;" @rt="request"> Http Request</button>
 		<br/>
 		<p>Hola {{ user }}</p>
 	</center>
