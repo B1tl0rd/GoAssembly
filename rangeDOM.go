@@ -1,4 +1,5 @@
 package GoAssembly
+
 import (
 	"strconv"
 	"strings"
@@ -63,8 +64,6 @@ func setIdAndEventName(template *Page) {
 					agrega := "Ev" + strconv.Itoa(Numero)
 					parse := template.compileTemplate[poxA+1 : poxB]
 					n := strings.LastIndex(parse, ".")
-					//fmt.Println(parse[n+1:])
-					//fmt.Println(parse[:n])
 					eventos = append(eventos, evento{
 						old:     oldEl,
 						evento:  parse[n+1:],
@@ -116,7 +115,6 @@ func getIdTotalValue() {
 					if GetElementId(old).String() != "null" {
 						oldValue[old] = GetElementId(old).Get("value")
 					}
-
 				}
 			} else {
 				trab = true
