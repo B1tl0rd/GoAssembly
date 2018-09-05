@@ -11,6 +11,7 @@ func RutaRequest() *GoAssembly.Page {
 	//Axios := GoAssembly.NewAxios(&App)
 	Doc := GoAssembly.Document(&App)
 	App.Template = `
+	<button @rt="index">Go to Index</button>
 	<center>
 		<h1>Request Page</h1>
 		<button @e="get.click" >Get</button>
