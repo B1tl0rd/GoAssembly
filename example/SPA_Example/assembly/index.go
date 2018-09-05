@@ -24,7 +24,8 @@ func RutaIndex() *GoAssembly.Page {
 	//Con la etiqueta ruta se agrega un id al elemento y el evento click para entrar a la ruta declarada entre la comillas
 	App.Template = `
 	<center>
-		<h1>Pagina Inicio</h1>
+		<h1>Pagina Inicio / Home Page</h1>
+		<br/>
 		<button @rt="variables">Entra a Variables</button>
 		<button @rt="eventos">Entrar a Eventos</button>
 		<button @rt="extras">Extras</button>
@@ -32,7 +33,8 @@ func RutaIndex() *GoAssembly.Page {
 		<button @rt="error">Not Found</button>
 		<button style="color:red;" @rt="request"> Http Request</button>
 		<br/>
-		<p>Hola {{ user }}</p>
+		<br/>
+		<h3>Hola {{ user }}</h3>
 	</center>
 	`
 	//Declara tus variables
