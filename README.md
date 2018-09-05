@@ -45,42 +45,8 @@ Guarda como `assembly/main.go`
 
 `$ GOARCH=wasm GOOS=js go build`
 
-## How to Deploy
-* Create Server
-```go
-package main
+# For more information
 
-import "github.com/labstack/echo"
-
-var server = ":8081"
-
-func main() {
-	s := echo.New()
-	s.Static("/", "miapp")
-	println("Server in http://localhost" + server)
-	s.Start(":8081")
-}
-```
-1) Save in `server.go`
-2) Build server
-3) Create `miapp` folder 
-3) Copy `assembly` folder in `miapp`
-### Writting....
-
-
-## Run App Life
-
-
-```mermaid
-graph LR
-ruta[Read Route]
-read(Read Var,Read Routes)
-eventos{Add Events}
-run[RunApp] -->  ruta
-ruta --> read
-
-
- 
-```
+[Link Wiki](https://github.com/AndrusGerman/GoAssembly/wiki)
 
 
