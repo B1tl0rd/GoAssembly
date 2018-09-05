@@ -38,3 +38,15 @@ func Document(t *Page) documentC {
 func (ap documentC) Alert(tx string) {
 	js.Global().Call("alert", tx)
 }
+
+/*
+// SetHTML
+func (a *documentC) SetHTML(id string, html string) {
+	HTMLset(id, element)
+}
+*/
+
+// Log console.log js
+func (a *documentC) Log(data js.Value) {
+	js.Global().Get("console").Call("log", data)
+}
